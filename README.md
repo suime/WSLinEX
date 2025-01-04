@@ -23,7 +23,7 @@ image: https://images.velog.io/velog.png
 
 WSL이 설치가 되면 윈도우에서 우분투 터미널로 접속한다.
 
-```sh title:"빌드 에센셜 패키지 설치"
+```sh 
 sudo apt update
 sudo apt install build-essential
 ```
@@ -83,7 +83,7 @@ image: https://developer.download.nvidia.com/images/og-default.jpg
 
 ▽ 아래 코드만 실행해도됨
 
-```sh title:"11.8 쿠다 설치"
+```sh 
 wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
 sudo sh cuda_11.8.0_520.61.05_linux.run --override
 ```
@@ -101,19 +101,20 @@ description: "cuDNN 버전 모음"
 
 ▽ 아래 코드만 실행해도됨
 
-```sh title:"cuDNN 9.6 설치"
+cuDNN 9.6 설치
+```sh 
 cd ~
 wget https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-x86_64/cudnn-linux-x86_64-9.6.0.74_cuda11-archive.tar.xz
 tar -xvf cudnn-linux-x86_64-9.6.0.74_cuda11-archive.tar.xz
 ```
-
-```sh title:"cudnn 9.6을 cuda 경로에 복사하기"
+cudnn 9.6을 cuda 경로에 복사하기
+```sh 
 cd ~/cudnn-linux-x86_64-9.6.0.74_cuda11-archive
 sudo cp include/cudnn*.h /usr/local/cuda-11.8/include
 sudo cp lib/libcudnn* /usr/local/cuda-11.8/lib64
 ```
-
-```sh title:"리눅스 경로 설정 11.8 버전"
+리눅스 경로 설정하기 cuda 11.8 버전
+```sh 
 echo 'export CUDA_HOME=/usr/local/cuda-11.8' >> ~/.bashrc 
 echo 'export PATH=$CUDA_HOME/bin:$PATH' >> ~/.bashrc 
 echo 'export CUDADIR=$CUDADIR:$CUDA_HOME' >> ~/.bashrc 
@@ -135,13 +136,13 @@ host: www.anaconda.com
 favicon: https://www.anaconda.com/wp-content/themes/berg-theme-child/assets/images/favicon/android-icon-192x192.png
 image: https://www.anaconda.com/wp-content/uploads/2024/03/download-svgrepo-com-2.svg
 ```
-
-```sh title:"anaconda 설치"
+anaconda 설치하기
+```sh 
 wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
 sh *sh
 ```
-
-```sh title:"miniconda 설치"
+miniconda 설치하기
+```sh 
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh *.sh
 ```
@@ -149,11 +150,13 @@ sh *.sh
 ### 텐서 설치 및 확인
 콘다 환경 활성화 후 할 것들
 
-```sh title:"텐서플로 설치 "
+텐서플로 설치
+```sh 
 pip install 'tensorflow[and-cuda]'
 ```
 
-```sh title:"텐서플로가 그래픽카드 잡고 있는지 확인"
+텐서플로가 그래픽카드 잡고 있는지 확인
+```sh
 python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
 
