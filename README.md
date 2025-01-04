@@ -1,7 +1,7 @@
 # WSLinEX
 "Building a Data Analytics Environment in the Company"
 
-#### WSL 설치
+## WSL 설치
 참고링크
 
 ```cardlink
@@ -30,8 +30,8 @@ sudo apt install build-essential
 
 build-essential 패키지는 개발에 필요한 기본 라이브러리와 헤더파일 등을 갖고 있는 패키지이다. 각종 실행파일 실행에 필요한 `cmake`, `gcc`, `g++` 등의 라이브러리를 제공한다.
 
-#### 분석 환경 설정
-###### 🚧 각종 SSL 우회 설정하기
+## 분석 환경 설정
+### 🚧 각종 SSL 우회 설정하기
 - [!] 중요 회사컴에서는 SSL 인증이 안되서 우회를 해야된다.
 
 ```sh title:"각종 SSL 우회하기"
@@ -53,11 +53,11 @@ source ~/.bashrc
 
 위에거 안하면 `wget` 뒤에 계속 저 옵션을 붙여야 하므로 해두면 좋다.
 
-###### nvidia 드라이버
+### nvidia 드라이버
 - 기본적으로 WSL에서는 윈도우의 그래픽카드 드라이버를 따라가기 때문에 따로 리눅스 배포판에 맞는 그픽 카드를 **추가적으로 설치할 필요가 없다!**
 - 오히려 설치하면 오류가 발생할 수 있다.
 
-###### 리눅스 기준 `cuda` 및 `cuDNN` 버전
+### 리눅스 기준 `cuda` 및 `cuDNN` 버전
 
 | **YOLO 버전**                                                      | **PyTorch**                                             | **Tensorflow**                                                      | **Python 버전**  | **cuDNN 버전** | **CUDA 버전** |
 | ---------------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------- | -------------- | ------------ | ----------- |
@@ -70,7 +70,7 @@ source ~/.bashrc
 | [YOLOv10](https://github.com/THU-MIG/yolov10)                    | >=1.8.0                                                 | <=2.13.1                                                            | >=3.8 & <=3.11 | >=7.6        | >=10.1      |
 | [YOLOv11](https://github.com/ultralytics/ultralytics)            | >=1.8.0                                                 | >=2.0.0                                                             | >=3.8          | >=7.4        | >=10.0      |
 
-###### CUDA 다운로드
+### CUDA 다운로드
 
 ```cardlink
 url: https://developer.nvidia.com/cuda-toolkit-archive
@@ -88,7 +88,7 @@ wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/
 sudo sh cuda_11.8.0_520.61.05_linux.run --override
 ```
 
-###### cuDNN 다운로드
+### cuDNN 다운로드
 
 ```cardlink
 url: https://developer.nvidia.com/cudnn-archive
@@ -125,7 +125,7 @@ echo 'export TF_CPP_MIN_LOG_LEVEL=3' >> ~/.bashrc
 nvcc --version
 ```
 
-###### 아나콘다 설치
+### 아나콘다 설치
 
 ```cardlink
 url: https://www.anaconda.com/download/success
@@ -146,7 +146,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh *.sh
 ```
 
-###### 텐서 설치 및 확인
+### 텐서 설치 및 확인
 콘다 환경 활성화 후 할 것들
 
 ```sh title:"텐서플로 설치 "
@@ -159,4 +159,4 @@ python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU')
 
 `[PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]` ← 문구가 나오면 텐서 설치 확인
 
-#### vscode에서 접속
+## vscode에서 접속
